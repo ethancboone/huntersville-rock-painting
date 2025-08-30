@@ -20,7 +20,7 @@ image: /assets/og.jpg
         {% if hero_items.size > 0 %}
         <div class="mosaic">
           {% for item in hero_items %}
-          <a class="mosaic-item {% if forloop.index == 1 or forloop.index == 4 %}mosaic-lg{% endif %}" href="{{ item.url }}" aria-label="{{ item.title }}">
+          <a class="mosaic-item {% if forloop.index == 1 or forloop.index == 4 %}mosaic-lg{% endif %}" href="{{ item.url | relative_url }}" aria-label="{{ item.title }}">
             <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
           </a>
           {% endfor %}
@@ -61,7 +61,7 @@ image: /assets/og.jpg
 <div class="row g-3" data-reveal>
   {% for item in featured %}
   <div class="col-12 col-sm-6 col-md-4">
-    <a class="card h-100 text-decoration-none" href="{{ item.url }}">
+    <a class="card h-100 text-decoration-none" href="{{ item.url | relative_url }}">
       <img class="card-img-top gallery-card-img" src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
       <div class="card-body"><div class="card-title h6 mb-0">{{ item.title }}</div></div>
     </a>
