@@ -105,5 +105,8 @@ image: /assets/og.jpg
 <p>We’ll add testimonials here as they come in.</p>
 {% endif %}
 
+## About the Artist
+With over two decades serving the Lake Norman and North Charlotte area, our artist brings deep experience across large-scale murals, school parking spot painting, and spirit rock designs. Expect professional communication, durable materials, and on-time delivery.
+
 ## Service Area
 Huntersville, Cornelius, Davidson, North Charlotte. Need another location? [Contact us]({{ '/contact/' | relative_url }}).

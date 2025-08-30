@@ -17,9 +17,7 @@ title: Services & Pricing
           {% for i in p.includes %}<li>{{ i }}</li>{% endfor %}
         </ul>
         {% endif %}
-        {% if p.stripe_link %}
-        <a class="btn btn-primary mt-auto align-self-start" href="{{ p.stripe_link }}" target="_blank" rel="noopener">Reserve with Stripe</a>
-        {% endif %}
+        <a class="btn btn-primary mt-auto align-self-start" href="{{ '/book/' | relative_url }}">Request to Book</a>
       </div>
     </div>
   </div>
@@ -37,5 +35,5 @@ title: Services & Pricing
 - Lead time: book 1–2 weeks ahead when possible.
 
 <div class="alert alert-info mt-3">
-  <strong>Note:</strong> Clients arrange rock reservations (school/HOA). We handle design, materials, and painting.
+  <strong>Note:</strong> Clients arrange rock reservations (school/HOA). We handle design, materials, and painting. Payment is completed via Venmo or Zelle after booking.
 </div>

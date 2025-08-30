@@ -16,7 +16,5 @@ layout: default
     {% for i in page.includes %}<li>{{ i }}</li>{% endfor %}
   </ul>
   {% endif %}
-  {% if page.stripe_link %}
-  <p><a class="btn" href="{{ page.stripe_link }}">Reserve with Stripe</a></p>
-  {% endif %}
+  <p><a class="btn" href="{{ '/book/' | relative_url }}">Request to Book</a></p>
 </article>

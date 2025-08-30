@@ -33,7 +33,7 @@ collections:
       - {label: Price, name: price, widget: string}
       - {label: Short, name: short, widget: string}
       - {label: Includes, name: includes, widget: list}
-      - {label: Stripe Link, name: stripe_link, widget: string}
+      # Stripe removed; booking handled via site Book page
 
   - name: "testimonials"
     label: "Testimonials"

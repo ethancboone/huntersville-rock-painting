@@ -1,6 +1,6 @@
 # Huntersville Rock Art — Static Site
 
-A GitHub Pages–ready Jekyll site for a spirit-rock painting business, including gallery, pricing, booking, contact form, Stripe links, and optional Static CMS.
+A GitHub Pages–ready Jekyll site for a spirit-rock painting business, including gallery, pricing, booking, contact form, and optional Static CMS.
 
 Quick Links
 - Live site (after deploy): https://ethancboone.github.io/huntersville-rock-painting/
@@ -23,7 +23,7 @@ Notes
 
 Content Model
 - Gallery items: `_gallery/*.md` with front matter (title, date, tags, image, alt, caption)
-- Packages: `_packages/*.md` with front matter (name, price, short, includes, stripe_link)
+- Packages: `_packages/*.md` with front matter (name, price, short, includes)
 - Testimonials: `_testimonials/*.md` with front matter (author, quote)
 
 Gallery at scale (hundreds of photos)
@@ -55,7 +55,7 @@ Configure Before Launch
 - `admin/config.yml`: set `repo: yourname/yourrepo`
 - Replace Formspree endpoint in `contact.md`
 - Replace Calendly URL in `book.md`
-- Add Stripe Payment Links in `_packages/*.md`
+- Update Venmo/Zelle placeholders in `book.md`
 - Upload real images to `assets/gallery/` and update `image` paths
 - (Optional) Add `/assets/og.jpg` and analytics snippet in `_layouts/default.html`
   - For rich link previews (iMessage, Messages/RCS, Facebook, etc.), ensure a real `assets/og.jpg` image exists. `jekyll-seo-tag` outputs Open Graph/Twitter meta tags using `page.image` or `site.image`.
@@ -74,7 +74,7 @@ Acceptance Checks
 - Gallery grid is responsive and shows latest items
 - Contact form submits to Formspree inbox
 - Calendly widget loads on `/book`
-- Stripe Payment Links open checkout
+- Book page loads Calendly widget
 - CMS can create a gallery item that appears on `/gallery`
 
 Notes
