@@ -1,8 +1,6 @@
 backend:
-  name: github
-  repo: ethancboone/huntersville-rock-painting
+  name: git-gateway
   branch: main
-  base_url: https://api.github.com
 
 media_folder: "assets/gallery"
 public_folder: "/assets/gallery"
