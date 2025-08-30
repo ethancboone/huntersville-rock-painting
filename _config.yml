@@ -1,0 +1,36 @@
+title: "Huntersville Rock Art"
+description: "Custom-painted spirit rocks for birthdays, schools, and events in Huntersville, NC and nearby."
+url: "https://yourname.github.io"
+baseurl: ""
+
+collections:
+  gallery:
+    output: true
+    permalink: /gallery/:name/
+  packages:
+    output: true
+    permalink: /services/:name/
+  testimonials:
+    output: true
+    permalink: /testimonials/:name/
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: "_gallery"
+    values:
+      layout: gallery_item
+  - scope:
+      path: "_packages"
+    values:
+      layout: package
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+permalink: pretty
+

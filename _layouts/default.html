@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  {% seo %}
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <!-- Analytics: insert GA or Plausible snippet here -->
+</head>
+<body>
+  <header class="nav">
+    <a href="/" class="brand">{{ site.title }}</a>
+    <nav>
+      <a href="/gallery/">Gallery</a>
+      <a href="/services/">Services</a>
+      <a href="/book/">Book</a>
+      <a href="/faq/">FAQ</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">{{ content }}</main>
+
+  <footer class="footer">
+    <p>© {{ site.time | date: "%Y" }} {{ site.title }} · Huntersville, NC</p>
+  </footer>
+</body>
+</html>
+

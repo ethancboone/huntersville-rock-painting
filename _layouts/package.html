@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="package">
+  <a href="/services/" class="btn" style="display:inline-block;margin-bottom:12px;">← Back to Services</a>
+  <h1>{{ page.name }}</h1>
+  {% if page.price %}
+  <p><strong>Price:</strong> ${{ page.price }}</p>
+  {% endif %}
+  {% if page.short %}
+  <p>{{ page.short }}</p>
+  {% endif %}
+  {% if page.includes %}
+  <h3>What's included</h3>
+  <ul>
+    {% for i in page.includes %}<li>{{ i }}</li>{% endfor %}
+  </ul>
+  {% endif %}
+  {% if page.stripe_link %}
+  <p><a class="btn" href="{{ page.stripe_link }}">Reserve with Stripe</a></p>
+  {% endif %}
+</article>
+
