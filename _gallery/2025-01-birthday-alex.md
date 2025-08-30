@@ -5,7 +5,7 @@ tags: [birthday]
 location: "Huntersville"
 style: [bold, balloons]
 theme: [birthday]
-image: /assets/gallery/alex-10.jpg
+image: /assets/gallery/0CD90A13-43D1-4766-8B78-2765071B023C.JPG
 alt: "Blue and gold birthday rock with balloons and Alex’s name"
 caption: "Bright balloons and custom lettering for Alex’s big day."
 ---
