@@ -1,0 +1,8 @@
+url: "http://127.0.0.1:4000"
+baseurl: ""
+
+# You can add dev-only settings here if needed
+# e.g., exclude big folders or enable drafts
+# drafts: true
+# future: true
+

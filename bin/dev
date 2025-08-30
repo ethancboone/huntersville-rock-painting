@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Install gems (no-op if already installed)
+bundle install
+
+# Serve with live reload and dev config overrides
+exec bundle exec jekyll serve --livereload --config _config.yml,config.dev.yml
+

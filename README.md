@@ -10,9 +10,16 @@ Requirements
 - Ruby 3.x (recommended)
 - Bundler and Jekyll (or use GitHub Actions only)
 
-Local Setup
-1. Install Jekyll and plugins: `gem install bundler jekyll jekyll-sitemap jekyll-seo-tag`
-2. Serve locally: `jekyll serve` then open http://127.0.0.1:4000/huntersville-rock-painting/
+Local Development
+- Prereqs: Ruby 3.x and Bundler (`gem install bundler`)
+- One-time: `bundle install`
+- Run with live reload and dev baseurl:
+  - `bash bin/dev`
+  - Then open http://127.0.0.1:4000/
+
+Notes
+- Dev overrides are in `config.dev.yml` (sets `baseurl: ""` so local links work at root).
+- You can still run: `bundle exec jekyll serve --livereload --config _config.yml,config.dev.yml`
 
 Content Model
 - Gallery items: `_gallery/*.md` with front matter (title, date, tags, image, alt, caption)
@@ -57,6 +64,10 @@ Deploy (GitHub Pages)
 1. Push to `main`
 2. Pages deploys via GitHub Actions workflow at `.github/workflows/build.yml`
 3. After the first run, visit the live URL above
+
+Troubleshooting local run
+- If `jekyll` command is missing, run `gem install jekyll` or always prefix with `bundle exec`.
+- On macOS with Xcode updates, you may need to `brew install ruby` and ensure your PATH uses Homebrew Ruby.
 
 Acceptance Checks
 - Navigation works on mobile/desktop
