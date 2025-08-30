@@ -18,8 +18,7 @@ title: Services & Pricing
 {% endfor %}
 
 {% if site.packages == empty %}
-_No packages yet. Add some in_ <code>_packages/</code> _or via_ <a href="/admin/">CMS</a>.
+_No packages yet. Add some in_ <code>_packages/</code> _or via_ <a href="{{ '/admin/' | relative_url }}">CMS</a>.
 {% endif %}
 
 **Note:** Clients arrange rock reservations (school/HOA). We handle design, materials, and painting.
-

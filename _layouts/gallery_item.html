@@ -2,10 +2,10 @@
 layout: default
 ---
 <article class="gallery-item">
-  <a href="/gallery/" class="btn" style="display:inline-block;margin-bottom:12px;">← Back to Gallery</a>
+  <a href="{{ '/gallery/' | relative_url }}" class="btn" style="display:inline-block;margin-bottom:12px;">← Back to Gallery</a>
   <h1>{{ page.title }}</h1>
   {% if page.image %}
-    <img src="{{ page.image }}" alt="{{ page.alt | escape }}" style="width:100%;max-height:520px;object-fit:cover;border-radius:8px;"/>
+    <img src="{{ page.image | relative_url }}" alt="{{ page.alt | escape }}" style="width:100%;max-height:520px;object-fit:cover;border-radius:8px;"/>
   {% endif %}
   {% if page.caption %}
   <p style="margin-top:12px;">{{ page.caption }}</p>
@@ -14,4 +14,3 @@ layout: default
   <p class="muted" style="color:#777;">Tags: {{ page.tags | join: ", " }}</p>
   {% endif %}
 </article>
-

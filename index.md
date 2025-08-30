@@ -6,7 +6,7 @@ image: /assets/og.jpg
 # Custom-Painted Spirit Rocks
 Vibrant, weather-resistant designs for **birthdays**, **school spirit**, and **special events** in Huntersville, NC.
 
-[Book Now](/book/) · [See Pricing](/services/) · [View Gallery](/gallery/)
+[Book Now]({{ '/book/' | relative_url }}) · [See Pricing]({{ '/services/' | relative_url }}) · [View Gallery]({{ '/gallery/' | relative_url }})
 
 ## How It Works
 1. **Reserve** your rock with your school or HOA.
@@ -18,12 +18,12 @@ Vibrant, weather-resistant designs for **birthdays**, **school spirit**, and **s
 <div class="grid">
   {% for item in featured %}
   <a class="card" href="{{ item.url }}">
-    <img src="{{ item.image }}" alt="{{ item.alt }}" />
+    <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" />
     <div class="caption">{{ item.title }}</div>
   </a>
   {% endfor %}
   {% if featured.size == 0 %}
-  <p>No gallery items yet. Add one in <code>_gallery/</code> or via <a href="/admin/">CMS</a>.</p>
+  <p>No gallery items yet. Add one in <code>_gallery/</code> or via <a href="{{ '/admin/' | relative_url }}">CMS</a>.</p>
   {% endif %}
   
 </div>
@@ -47,5 +47,4 @@ Vibrant, weather-resistant designs for **birthdays**, **school spirit**, and **s
 {% endif %}
 
 ## Service Area
-Huntersville, Cornelius, Davidson, North Charlotte. Need another location? [Contact us](/contact/).
-
+Huntersville, Cornelius, Davidson, North Charlotte. Need another location? [Contact us]({{ '/contact/' | relative_url }}).

@@ -3,7 +3,7 @@
 A GitHub Pages–ready Jekyll site for a spirit-rock painting business, including gallery, pricing, booking, contact form, Stripe links, and optional Static CMS.
 
 Quick Links
-- Live site (after deploy): https://yourname.github.io
+- Live site (after deploy): https://ethancboone.github.io/huntersville-rock-painting/
 - Admin (Static CMS): /admin
 
 Requirements
@@ -12,7 +12,7 @@ Requirements
 
 Local Setup
 1. Install Jekyll and plugins: `gem install bundler jekyll jekyll-sitemap jekyll-seo-tag`
-2. Serve locally: `jekyll serve` then open http://127.0.0.1:4000
+2. Serve locally: `jekyll serve` then open http://127.0.0.1:4000/huntersville-rock-painting/
 
 Content Model
 - Gallery items: `_gallery/*.md` with front matter (title, date, tags, image, alt, caption)
@@ -34,8 +34,8 @@ Configure Before Launch
 
 Deploy (GitHub Pages)
 1. Push to `main`
-2. Ensure Pages is set to deploy from GitHub Actions
-3. The workflow at `.github/workflows/build.yml` builds and publishes to `gh-pages`
+2. Pages deploys via GitHub Actions workflow at `.github/workflows/build.yml`
+3. After the first run, visit the live URL above
 
 Acceptance Checks
 - Navigation works on mobile/desktop

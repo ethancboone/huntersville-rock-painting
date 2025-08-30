@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: yourname/yourrepo
+  repo: ethancboone/huntersville-rock-painting
   branch: main
   base_url: https://api.github.com
 
@@ -39,4 +39,3 @@ collections:
     fields:
       - {label: Author, name: author, widget: string}
       - {label: Quote, name: quote, widget: text}
-

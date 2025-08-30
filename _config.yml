@@ -1,7 +1,7 @@
 title: "Huntersville Rock Art"
 description: "Custom-painted spirit rocks for birthdays, schools, and events in Huntersville, NC and nearby."
-url: "https://yourname.github.io"
-baseurl: ""
+url: "https://ethancboone.github.io"
+baseurl: "/huntersville-rock-painting"
 
 collections:
   gallery:
@@ -33,4 +33,3 @@ defaults:
       layout: page
 
 permalink: pretty
-
