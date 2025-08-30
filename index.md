@@ -3,7 +3,7 @@ layout: page
 title: Home
 image: /assets/og.jpg
 ---
-<section class="py-5 hero text-center">
+<section class="py-5 hero text-center" data-reveal>
   <div class="container">
     <h1 class="display-5 fw-bold">Custom-Painted Spirit Rocks</h1>
     <p class="lead mb-4">Vibrant, weather-resistant designs for <strong>birthdays</strong>, <strong>school spirit</strong>, and <strong>special events</strong> in Huntersville, NC.</p>
@@ -16,22 +16,22 @@ image: /assets/og.jpg
   </section>
 
 ## How It Works
-<div class="row g-4 text-center">
-  <div class="col-md-4">
+<div class="row g-4 text-center" data-reveal>
+  <div class="col-md-4" data-reveal>
     <div class="p-4 h-100 bg-white rounded-3 border">
       <div class="fs-1 mb-2 text-primary"><i class="bi bi-geo-alt-fill"></i></div>
       <h3 class="h5">Reserve the Rock</h3>
       <p class="mb-0">Secure your rock with your school or HOA.</p>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" data-reveal>
     <div class="p-4 h-100 bg-white rounded-3 border">
       <div class="fs-1 mb-2 text-primary"><i class="bi bi-chat-dots-fill"></i></div>
       <h3 class="h5">Share Your Idea</h3>
       <p class="mb-0">Theme, name, and date. We send a quick mockup.</p>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-4" data-reveal>
     <div class="p-4 h-100 bg-white rounded-3 border">
       <div class="fs-1 mb-2 text-primary"><i class="bi bi-brush-fill"></i></div>
       <h3 class="h5">We Paint</h3>
@@ -42,7 +42,7 @@ image: /assets/og.jpg
 
 ## Featured Work
 {% assign featured = site.gallery | sort: 'date' | reverse | slice: 6 %}
-<div class="row g-3">
+<div class="row g-3" data-reveal>
   {% for item in featured %}
   <div class="col-12 col-sm-6 col-md-4">
     <a class="card h-100 text-decoration-none" href="{{ item.url }}">

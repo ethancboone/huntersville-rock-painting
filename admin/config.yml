@@ -17,6 +17,9 @@ collections:
       - {label: Title, name: title, widget: string}
       - {label: Date, name: date, widget: datetime}
       - {label: Tags, name: tags, widget: list, default: [birthday]}
+      - {label: Location, name: location, widget: string, hint: "e.g., Huntersville, Cornelius"}
+      - {label: Style, name: style, widget: list, default: [bold], hint: "e.g., bold, mascot, classic"}
+      - {label: Theme, name: theme, widget: list, default: [birthday], hint: "e.g., birthday, school, event"}
       - {label: Image, name: image, widget: image}
       - {label: Alt Text, name: alt, widget: string}
       - {label: Caption, name: caption, widget: text}

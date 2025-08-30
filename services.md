@@ -4,9 +4,9 @@ title: Services & Pricing
 ---
 # Services & Pricing
 
-<div class="row g-3">
+<div class="row g-3" data-reveal>
 {% for p in site.packages %}
-  <div class="col-12 col-md-6 col-lg-4">
+  <div class="col-12 col-md-6 col-lg-4" data-reveal>
     <div class="card h-100 shadow-sm">
       <div class="card-body d-flex flex-column">
         <h3 class="h5 card-title">{{ p.name }}</h3>

@@ -1,31 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Gallery tag filtering
-  const filterBar = document.getElementById('gallery-filters');
+  // Gallery multi-group filtering (location, style, theme)
   const grid = document.getElementById('gallery-grid');
-  if (filterBar && grid) {
+  const filterGroups = document.querySelectorAll('[data-filter-group]');
+  if (grid && filterGroups.length) {
     const items = Array.from(grid.querySelectorAll('.gallery-item'));
-    const setActive = (tag) => {
+    const state = { location: 'all', style: 'all', theme: 'all' };
+
+    const applyFilters = () => {
       items.forEach(el => {
-        const tags = (el.getAttribute('data-tags') || '').split(/\s+/);
-        const show = tag === 'all' || tags.includes(tag);
-        el.style.display = show ? '' : 'none';
+        const okLocation = state.location === 'all' || (el.dataset.location || '').toLowerCase() === state.location;
+        const okStyle = state.style === 'all' || (el.dataset.style || '').toLowerCase().split(/\s+/).includes(state.style);
+        const okTheme = state.theme === 'all' || (el.dataset.theme || '').toLowerCase().split(/\s+/).includes(state.theme);
+        el.style.display = (okLocation && okStyle && okTheme) ? '' : 'none';
       });
     };
-    filterBar.addEventListener('click', (e) => {
-      const btn = e.target.closest('[data-filter]');
-      if (!btn) return;
-      filterBar.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      setActive(btn.getAttribute('data-filter'));
+
+    filterGroups.forEach(group => {
+      group.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+        const groupName = group.getAttribute('data-filter-group');
+        group.querySelectorAll('.nav-link').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        state[groupName] = btn.getAttribute('data-filter');
+        applyFilters();
+      });
     });
-    // Optional: hash -> initial filter
-    const hash = (location.hash || '').replace('#', '');
-    if (hash) {
-      const map = { birthday: 'birthday', school: 'school', events: 'event', event: 'event' };
-      const tag = map[hash] || 'all';
-      const btn = filterBar.querySelector(`[data-filter="${tag}"]`);
-      if (btn) { btn.click(); }
-    }
   }
 
   // Lightbox using Bootstrap modal
@@ -48,6 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
       imgEl.alt = '';
       capEl.textContent = '';
     });
+  }
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (revealEls.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
   }
 });
 
