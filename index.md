@@ -3,14 +3,30 @@ layout: page
 title: Home
 image: /assets/og.jpg
 ---
-<section class="py-5 hero text-center" data-reveal>
+<section class="py-5 hero" data-reveal>
   <div class="container">
-    <h1 class="display-5 fw-bold">Custom-Painted Spirit Rocks</h1>
-    <p class="lead mb-4">Vibrant, weather-resistant designs for <strong>birthdays</strong>, <strong>school spirit</strong>, and <strong>special events</strong> in Huntersville, NC.</p>
-    <div class="d-flex gap-2 justify-content-center">
-      <a class="btn btn-primary btn-lg" href="{{ '/book/' | relative_url }}"><i class="bi bi-calendar2-check me-1"></i> Book Now</a>
-      <a class="btn btn-outline-primary btn-lg" href="{{ '/services/' | relative_url }}"><i class="bi bi-cash-coin me-1"></i> See Pricing</a>
-      <a class="btn btn-outline-secondary btn-lg" href="{{ '/gallery/' | relative_url }}"><i class="bi bi-image me-1"></i> View Gallery</a>
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 text-center text-lg-start">
+        <h1 class="display-5 fw-bold">Custom-Painted Spirit Rocks</h1>
+        <p class="lead mb-4">Vibrant, weather-resistant designs for <strong>birthdays</strong>, <strong>school spirit</strong>, and <strong>special events</strong> in Huntersville, NC.</p>
+        <div class="d-flex gap-2 justify-content-center justify-content-lg-start">
+          <a class="btn btn-primary btn-lg rounded-pill" href="{{ '/book/' | relative_url }}"><i class="bi bi-calendar2-check me-1"></i> Book Now</a>
+          <a class="btn btn-outline-primary btn-lg rounded-pill" href="{{ '/services/' | relative_url }}"><i class="bi bi-cash-coin me-1"></i> See Pricing</a>
+          <a class="btn btn-outline-secondary btn-lg rounded-pill" href="{{ '/gallery/' | relative_url }}"><i class="bi bi-image me-1"></i> View Gallery</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        {% assign hero_items = site.gallery | sort: 'date' | reverse | slice: 6 %}
+        {% if hero_items.size > 0 %}
+        <div class="mosaic">
+          {% for item in hero_items %}
+          <a class="mosaic-item {% if forloop.index == 1 or forloop.index == 4 %}mosaic-lg{% endif %}" href="{{ item.url }}" aria-label="{{ item.title }}">
+            <img src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
+          </a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
     </div>
   </div>
   </section>
