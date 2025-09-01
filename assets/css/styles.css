@@ -1,18 +1,28 @@
 /* Theme overrides layered on Bootstrap */
 :root {
-  --brand-primary: #5b8def; /* brighter blue */
-  --brand-primary-dark: #3c6ce6;
-  --brand-accent: #ffd6a5; /* warm peach */
-  --brand-accent-2: #b8f2e6; /* mint */
-  --hero-gradient: radial-gradient(1200px 600px at 10% -10%, #b8f2e622, transparent 60%),
-                   radial-gradient(900px 500px at 110% 10%, #ffd6a522, transparent 60%),
-                   linear-gradient(135deg, #fbfdff, #eef4ff);
+  /* Palette */
+  --color-slate: #4C6085;   /* slate */
+  --color-blue:  #39A0ED;   /* primary blue */
+  --color-mint:  #36F1CD;   /* mint accent */
+  --color-teal:  #13C4A3;   /* teal accent */
+  --color-ink:   #32322C;   /* dark text */
+
+  /* Tokens mapped from palette */
+  --brand-primary: var(--color-blue);
+  --brand-primary-dark: var(--color-slate);
+  --brand-accent: var(--color-mint);
+  --brand-accent-2: var(--color-teal);
+  --text-color: var(--color-ink);
+  --surface: #ffffff;
+  --surface-alt: #f6faf9; /* subtle mint-tinted surface */
+  --border-subtle: rgba(76, 96, 133, 0.18); /* from slate */
+  --hero-bg: #36F1CD1A; /* 10% mint tint */
 }
-body { color: #111; background: #f7f9fc; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body { color: var(--text-color); background: var(--surface-alt); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
 h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; letter-spacing: -0.3px; }
 
 /* Hero */
-.hero { background: var(--hero-gradient); border-radius: 1.25rem; position: relative; overflow: hidden; }
+.hero { background: var(--hero-bg); border-radius: 1.25rem; position: relative; overflow: hidden; border: 1px solid var(--border-subtle); }
 .hero::before,
 .hero::after { content: none; }
 
@@ -24,16 +34,21 @@ h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; 
 .flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .6s ease; }
 .flip-card:hover .flip-inner { transform: translateY(-2px) scale(1.02); }
 .flip-card.is-flipped .flip-inner { transform: rotateY(180deg); }
-.flip-front, .flip-back { position: relative; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,.09); }
-.flip-front { background: #fff; }
-.flip-back { position: absolute; inset: 0; transform: rotateY(180deg); background: #ffffff; display: flex; align-items: center; justify-content: center; }
+.flip-front, .flip-back { position: relative; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 22px rgba(0,0,0,.09); border: 1px solid var(--border-subtle); }
+.flip-front { background: var(--surface); }
+.flip-back { position: absolute; inset: 0; transform: rotateY(180deg); background: var(--surface); display: flex; align-items: center; justify-content: center; }
 
 /* Utility */
 .muted { color:#6c757d !important; }
 
 /* Navbar tweaks for better contrast */
+.navbar { border-bottom: 1px solid var(--border-subtle); }
 .navbar .nav-link { color:#212529; }
-.navbar .nav-link:hover { color:#0d6efd; }
+.navbar .nav-link:hover { color: var(--brand-primary); }
+
+/* Links */
+a { color: var(--brand-primary-dark); }
+a:hover { color: var(--brand-primary); }
 
 /* Smooth scroll behavior */
 html { scroll-behavior: smooth; }
