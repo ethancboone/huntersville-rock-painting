@@ -3,15 +3,11 @@
   /* Palette */
   --color-slate: #4C6085;   /* slate */
   --color-blue:  #39A0ED;   /* primary blue */
-  --color-mint:  #36F1CD;   /* mint accent */
-  --color-teal:  #13C4A3;   /* teal accent */
   --color-ink:   #32322C;   /* dark text */
 
   /* Tokens mapped from palette */
   --brand-primary: var(--color-blue);
   --brand-primary-dark: var(--color-slate);
-  --brand-accent: var(--color-mint);
-  --brand-accent-2: var(--color-teal);
   --text-color: var(--color-ink);
   --surface: #ffffff;
   --surface-alt: #ecf5ff; /* light blue-tint */
@@ -28,6 +24,10 @@ h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; 
 
 /* Card images in grids: show full image without cropping */
 .gallery-card-img { width: 100%; height: auto; object-fit: contain; background: var(--surface); display:block; }
+
+/* Uniform aspect for gallery tiles without cropping */
+.ratio-rect { aspect-ratio: 4 / 3; width: 100%; background: var(--surface); display:flex; align-items:center; justify-content:center; }
+.ratio-rect > img { max-width: 100%; max-height: 100%; height: auto; width: auto; }
 
 /* Flip cards for gallery */
 .flip-card { perspective: 1000px; border-radius: 12px; }

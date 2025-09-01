@@ -15,7 +15,9 @@
     <div class="flip-card" tabindex="0" aria-label="Flip to view details">
       <div class="flip-inner">
         <div class="flip-front">
-          <img class="card-img-top gallery-card-img" src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
+          <div class="ratio-rect">
+            <img class="gallery-card-img" src="{{ item.image | relative_url }}" alt="{{ item.alt }}" loading="lazy" />
+          </div>
         </div>
         <div class="flip-back">
           <div class="p-3">
