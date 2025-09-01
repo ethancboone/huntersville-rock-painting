@@ -7,7 +7,7 @@
   {% seo %}
   <meta name="referrer" content="no-referrer-when-downgrade" />
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; img-src 'self' https: data:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; frame-src https://calendly.com; base-uri 'self'; form-action 'self' https://calendly.com;" />
+        content="default-src 'self'; img-src 'self' https: data:; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https: data:; connect-src 'self'; frame-src https://calendly.com; base-uri 'self'; form-action 'self' https://calendly.com;" />
   <link rel="canonical" href="{{ page.url | absolute_url }}" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +42,16 @@
 
   <main class="container py-4">{{ content }}</main>
 
-  <footer class="py-4 mt-5 border-top text-center">
+  <footer class="py-4 mt-5 border-top text-center" style="background: linear-gradient(180deg, #ffffff, #f3f7ff);">
     <div class="container">
+      <div class="mb-2">
+        {% if site.social.facebook %}
+        <a href="{{ site.social.facebook }}" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
+        {% endif %}
+        {% if site.social.instagram %}
+        <a href="{{ site.social.instagram }}" class="me-2" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram fs-4"></i></a>
+        {% endif %}
+      </div>
       <p class="mb-0 text-muted">© {{ site.time | date: "%Y" }} {{ site.title }} · Huntersville, NC</p>
     </div>
   </footer>

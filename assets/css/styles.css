@@ -1,11 +1,14 @@
 /* Theme overrides layered on Bootstrap */
 :root {
-  --brand-primary: #6ea8fe; /* light blue */
-  --brand-primary-dark: #4f86ea;
-  --brand-accent: #f9d8ff; /* soft lilac */
-  --hero-gradient: linear-gradient(135deg, #fdfbff, #eef6ff);
+  --brand-primary: #5b8def; /* brighter blue */
+  --brand-primary-dark: #3c6ce6;
+  --brand-accent: #ffd6a5; /* warm peach */
+  --brand-accent-2: #b8f2e6; /* mint */
+  --hero-gradient: radial-gradient(1200px 600px at 10% -10%, #b8f2e622, transparent 60%),
+                   radial-gradient(900px 500px at 110% 10%, #ffd6a522, transparent 60%),
+                   linear-gradient(135deg, #fbfdff, #eef4ff);
 }
-body { color: #111; background:#fafafa; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+body { color: #111; background: #f7f9fc; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
 h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; letter-spacing: -0.3px; }
 
 /* Hero */
@@ -16,7 +19,7 @@ h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; 
   position: absolute; border-radius: 50%; filter: blur(32px); opacity: .5; pointer-events: none;
 }
 .hero::before { width: 260px; height: 260px; background: var(--brand-accent); top: -60px; left: -60px; }
-.hero::after { width: 220px; height: 220px; background: #d0ebff; bottom: -50px; right: -40px; }
+.hero::after { width: 220px; height: 220px; background: var(--brand-accent-2); bottom: -50px; right: -40px; }
 
 /* Card images in grids */
 .gallery-card-img { height: 220px; object-fit: cover; transition: transform .35s ease; }
@@ -49,3 +52,7 @@ html { scroll-behavior: smooth; }
 .btn-primary:hover { filter: brightness(0.98); }
 .btn-outline-primary { color: var(--brand-primary-dark); border-color: var(--brand-primary); }
 .btn-outline-primary:hover { background: var(--brand-primary); color: #fff; }
+
+/* Footer icons */
+.bi-facebook, .bi-instagram { color: var(--brand-primary-dark); opacity: 0.85; }
+.bi-facebook:hover, .bi-instagram:hover { opacity: 1; }
