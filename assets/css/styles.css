@@ -14,8 +14,8 @@
   --border-subtle: rgba(76, 96, 133, 0.18); /* from slate */
   --hero-bg: #39A0ED22; /* 13% primary blue tint */
 }
-body { color: var(--text-color); background: var(--surface-alt); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
-h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; letter-spacing: -0.3px; }
+body { color: var(--text-color); background: var(--surface-alt); font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+h1, h2, h3, .navbar-brand { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.2px; }
 
 /* Hero */
 .hero { background: var(--hero-bg); border-radius: 1.25rem; position: relative; overflow: hidden; border: 1px solid var(--border-subtle); }
@@ -72,9 +72,20 @@ html { scroll-behavior: smooth; }
 .btn-primary:hover { filter: brightness(0.98); }
 .btn-outline-primary { color: var(--brand-primary-dark); border-color: var(--brand-primary); }
 .btn-outline-primary:hover { background: var(--brand-primary); color: #fff; }
+.btn, .btn-lg { border-radius: 999px; }
 
 /* Footer */
 .site-footer { background: var(--color-slate); color: #fff; }
 .site-footer .text-muted { color: rgba(255,255,255,.78) !important; }
 .site-footer .bi-facebook, .site-footer .bi-instagram { color: #fff; opacity: 0.9; }
 .site-footer .bi-facebook:hover, .site-footer .bi-instagram:hover { opacity: 1; }
+
+/* iOS-like stepper */
+.stepper { position: relative; display: grid; grid-template-columns: 1fr; gap: 18px; }
+@media (min-width: 768px) { .stepper { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+.step { position: relative; text-align: center; padding: 16px; background: var(--surface); border: 1px solid var(--border-subtle); border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.step-icon { width: 56px; height: 56px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; background: linear-gradient(180deg, var(--brand-primary), #2f7ed2); color: #fff; font-size: 28px; box-shadow: 0 4px 14px rgba(57,160,237,.35); }
+.step-title { font-weight: 600; margin-top: 10px; }
+.step-desc { color: #6c757d; margin-top: 6px; }
+.stepper::before { content: ""; position: absolute; top: 44px; left: 12px; right: 12px; height: 2px; background: linear-gradient(90deg, rgba(57,160,237,.5), rgba(57,160,237,.15)); border-radius: 2px; display: none; }
+@media (min-width: 768px) { .stepper::before { display: block; } }
