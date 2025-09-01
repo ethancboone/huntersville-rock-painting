@@ -16,7 +16,7 @@
   --surface: #ffffff;
   --surface-alt: #ecf5ff; /* light blue-tint */
   --border-subtle: rgba(76, 96, 133, 0.18); /* from slate */
-  --hero-bg: #36F1CD33; /* 20% mint tint for more color */
+  --hero-bg: #39A0ED22; /* 13% primary blue tint */
 }
 body { color: var(--text-color); background: var(--surface-alt); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
 h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, sans-serif; letter-spacing: -0.3px; }

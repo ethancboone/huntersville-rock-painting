@@ -11,8 +11,8 @@ image: /assets/og.jpg
         <p class="lead mb-4">Vibrant, weather-resistant designs for <strong>birthdays</strong>, <strong>house numbers</strong>, <strong>yard art</strong>, and <strong>memorials</strong>.</p>
         <div class="d-flex gap-2 justify-content-center justify-content-lg-start">
           <a class="btn btn-primary btn-lg rounded-pill" href="{{ '/book/' | relative_url }}"><i class="bi bi-calendar2-check me-1"></i> Book Now</a>
-          <a class="btn btn-outline-primary btn-lg rounded-pill" href="{{ '/services/' | relative_url }}"><i class="bi bi-cash-coin me-1"></i> See Pricing</a>
           <a class="btn btn-outline-secondary btn-lg rounded-pill" href="{{ '/gallery/' | relative_url }}"><i class="bi bi-image me-1"></i> View Gallery</a>
+          <a class="btn btn-outline-primary btn-lg rounded-pill" href="{{ '/contact/' | relative_url }}"><i class="bi bi-chat-dots me-1"></i> Contact</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -68,7 +68,7 @@ image: /assets/og.jpg
   </div>
   {% endfor %}
   {% if featured.size == 0 %}
-    <div class="col-12"><p>No gallery items yet. Add one in <code>_gallery/</code> or via <a href="{{ '/admin/' | relative_url }}">CMS</a>.</p></div>
+    <div class="col-12"><p>No gallery items yet. Add one in <code>_gallery/</code>.</p></div>
   {% endif %}
 </div>
 
