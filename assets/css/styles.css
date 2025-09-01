@@ -14,8 +14,8 @@
   --border-subtle: rgba(76, 96, 133, 0.18); /* from slate */
   --hero-bg: #39A0ED22; /* 13% primary blue tint */
 }
-body { color: var(--text-color); background: var(--surface-alt); font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-h1, h2, h3, .navbar-brand { font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.2px; }
+body { color: var(--text-color); background: var(--surface-alt); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; letter-spacing: -0.3px; }
 
 /* Hero */
 .hero { background: var(--hero-bg); border-radius: 1.25rem; position: relative; overflow: hidden; border: 1px solid var(--border-subtle); }
@@ -72,7 +72,7 @@ html { scroll-behavior: smooth; }
 .btn-primary:hover { filter: brightness(0.98); }
 .btn-outline-primary { color: var(--brand-primary-dark); border-color: var(--brand-primary); }
 .btn-outline-primary:hover { background: var(--brand-primary); color: #fff; }
-.btn, .btn-lg { border-radius: 999px; }
+/* Default Bootstrap radii; no pill override */
 
 /* Footer */
 .site-footer { background: var(--color-slate); color: #fff; }
