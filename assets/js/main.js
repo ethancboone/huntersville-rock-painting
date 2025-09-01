@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Navbar shadow on scroll
+  const nav = document.getElementById('mainNav');
+  if (nav) {
+    const onScroll = () => {
+      if (window.scrollY > 4) nav.classList.add('shadow-sm'); else nav.classList.remove('shadow-sm');
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll);
+  }
+
   // Gallery multi-group filtering (location, style, theme)
   const grid = document.getElementById('gallery-grid');
   const filterGroups = document.querySelectorAll('[data-filter-group]');
@@ -64,4 +74,3 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => io.observe(el));
   }
 });
-

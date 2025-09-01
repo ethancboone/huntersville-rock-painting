@@ -1,0 +1,123 @@
+{
+  "project": "rock-painting-artist-site",
+  "hosting": {
+    "platform": "github-pages",
+    "deploy": "github-actions",
+    "branch": "main",
+    "https": true
+  },
+  "design": {
+    "style": "modern-clean",
+    "accessibility": "WCAG-AA",
+    "responsive": true,
+    "lightbox": true,
+    "grid_layout": true
+  },
+  "pages": [
+    {
+      "id": "home",
+      "path": "/",
+      "hero_image": "assets/hero/featured-rock.jpg",
+      "tagline": "Custom Painted Rocks by [Artist’s Name] in Huntersville, NC.",
+      "primary_cta": { "text": "Book a Project", "href": "/book" },
+      "secondary_cta": { "text": "View Gallery", "href": "/gallery" }
+    },
+    {
+      "id": "gallery",
+      "path": "/gallery",
+      "type": "hub",
+      "source_dir": "assets/gallery",
+      "categories": [
+        "birthdays",
+        "house-numbers",
+        "yard-art",
+        "memorials",
+        "inspirational-quotes",
+        "seasonal"
+      ],
+      "item_page": "optional"
+    },
+    {
+      "id": "about",
+      "path": "/about",
+      "sections": ["story", "inspiration", "style", "service-area"]
+    },
+    {
+      "id": "book",
+      "path": "/book",
+      "calendly": {
+        "embed": true,
+        "url": "https://calendly.com/your-handle/commission",
+        "fallback_link": true,
+        "frame_src_allow": ["https://calendly.com"]
+      }
+    },
+    {
+      "id": "contact",
+      "path": "/contact",
+      "fields": ["phone", "email", "social", "google-business-profile"]
+    }
+  ],
+  "seo": {
+    "keywords": [
+      "custom painted rocks Huntersville NC",
+      "hand-painted yard art Charlotte NC",
+      "memorial rock painter North Carolina"
+    ],
+    "image_alt_suffix": "custom rock painting in Huntersville NC",
+    "structured_data": ["LocalBusiness"],
+    "sitemap": true,
+    "robots": true,
+    "blog_topics": [
+      "Why Painted Rocks Make Unique Home & Garden Art",
+      "Custom Painted Rocks: A Local Art Trend in Charlotte NC"
+    ],
+    "canonical": true
+  },
+  "gallery_model": {
+    "taxonomy": "category->items",
+    "categories_dir": "assets/gallery",
+    "category_meta": "meta.json",
+    "fields": [
+      "file",
+      "title",
+      "alt",
+      "caption",
+      "city",
+      "size_inches",
+      "tags",
+      "featured"
+    ],
+    "naming_convention": "YYYY-MM-keywords-clientOrPlace-##.jpg",
+    "responsive_images": [480, 768, 1200, 1600],
+    "strip_exif": true,
+    "compress_quality": 80,
+    "formats": ["jpg", "webp", "avif"]
+  },
+  "security": {
+    "actions": {
+      "branch_protection": true,
+      "require_reviews": true,
+      "pinned_actions": true,
+      "permissions_minimized": true,
+      "dependabot": true,
+      "codeql": true,
+      "secret_scanning": true
+    },
+    "headers": {
+      "meta_csp": "default-src 'self'; img-src 'self' https: data:; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https: data:; connect-src 'self'; frame-src https://calendly.com; base-uri 'self'; form-action 'self' https://calendly.com",
+      "hsts_recommended": true,
+      "proxy_option": "cloudflare-for-headers"
+    },
+    "privacy": {
+      "no_pii": true,
+      "exif_stripped": true,
+      "analytics": "none_or_privacy_friendly"
+    }
+  },
+  "gmb": {
+    "booking_link": true,
+    "service_area": ["Huntersville, NC", "Charlotte, NC"]
+  }
+}
+

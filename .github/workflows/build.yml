@@ -17,13 +17,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4 pinned
+      - uses: ruby/setup-ruby@44511735964dcb71245e7e55f72539531f7bc0eb # v1 pinned
         with:
           ruby-version: '3.2'
           bundler-cache: true
       - run: bundle exec jekyll build -d _site --config _config.yml
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@f00f1b4373a3d0e49f9f2c943f2c2c6b2f9a8c1b # v3 pinned
         with:
           path: _site
   deploy:
@@ -34,4 +34,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@d6d3b2b9f6f2f2b0cf9c1a5e64a7278bdbf7f9e1 # v4 pinned

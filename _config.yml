@@ -15,9 +15,6 @@ collections:
   gallery:
     output: true
     permalink: /gallery/:name/
-  packages:
-    output: true
-    permalink: /services/:name/
   testimonials:
     output: true
     permalink: /testimonials/:name/
@@ -31,10 +28,6 @@ defaults:
       path: "_gallery"
     values:
       layout: gallery_item
-  - scope:
-      path: "_packages"
-    values:
-      layout: package
   - scope:
       path: ""
     values:

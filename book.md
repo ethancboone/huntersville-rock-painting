@@ -4,8 +4,14 @@ title: Book
 ---
 # Book Your Painting Date
 
-<div class="calendly-inline-widget" data-url="https://calendly.com/yourhandle/spirit-rock" style="min-width:320px;height:700px;"></div>
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<iframe
+  title="Book a Project on Calendly"
+  src="https://calendly.com/your-handle/commission?hide_gdpr_banner=1"
+  style="width:100%; min-height: 800px; border:0;"
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+  allowtransparency="true">
+</iframe>
 
 <div class="alert alert-info mt-3">
   <strong>Payment:</strong> After booking, you’ll receive instructions to pay via Venmo or Zelle.
