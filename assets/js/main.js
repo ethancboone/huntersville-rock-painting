@@ -73,4 +73,48 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.15 });
     revealEls.forEach(el => io.observe(el));
   }
+
+  // Flip-card interactions for gallery
+  const flipCards = document.querySelectorAll('.flip-card');
+  if (flipCards.length) {
+    flipCards.forEach(card => {
+      const toggle = () => card.classList.toggle('is-flipped');
+      card.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggle();
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle();
+        }
+      });
+    });
+    // Click outside to close any flipped card
+    document.addEventListener('click', (e) => {
+      const isCard = e.target.closest('.flip-card');
+      if (!isCard) {
+        document.querySelectorAll('.flip-card.is-flipped').forEach(c => c.classList.remove('is-flipped'));
+      }
+    });
+  }
+
+  // Service area map (Leaflet)
+  const mapEl = document.getElementById('service-map');
+  if (mapEl && window.L) {
+    const map = L.map(mapEl, { scrollWheelZoom: false }).setView([35.4107, -80.8428], 10); // Huntersville approx
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    const spots = [
+      { name: 'Huntersville', coords: [35.4107, -80.8428] },
+      { name: 'Charlotte', coords: [35.2271, -80.8431] },
+      { name: 'Cornelius', coords: [35.4868, -80.8601] },
+      { name: 'Davidson', coords: [35.4993, -80.8487] },
+    ];
+    spots.forEach(s => L.marker(s.coords).addTo(map).bindPopup(s.name));
+    const group = L.featureGroup(spots.map(s => L.marker(s.coords)));
+    map.fitBounds(group.getBounds(), { padding: [20, 20] });
+  }
 });
