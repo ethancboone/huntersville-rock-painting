@@ -6,7 +6,7 @@ permalink: /about/
 
 # About the Artist
 
-I’m [Artist’s Name], a local painter serving Huntersville and the greater Charlotte area. I specialize in durable, eye-catching rock paintings — from birthday celebrations to school spirit and custom yard art.
+I’m Dyane, a local painter serving Huntersville and the greater Charlotte area. I specialize in durable, eye-catching rock paintings — from birthday celebrations to school spirit and custom yard art.
 
 ## Story & Inspiration
 What began as helping friends and neighbors celebrate milestones became a full-time passion. I love turning simple stones into memorable statements for your home, school, or community.
@@ -18,4 +18,3 @@ Clean typography, bright color palettes, and weather-resistant finishes. I use p
 Huntersville, Cornelius, Davidson, and Charlotte, NC.
 
 Ready to start? Head to the [Book a Project]({{ '/book/' | relative_url }}) page.
-

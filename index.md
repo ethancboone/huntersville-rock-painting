@@ -7,7 +7,7 @@ image: /assets/og.jpg
   <div class="container">
     <div class="row align-items-center g-4">
       <div class="col-lg-6 text-center text-lg-start">
-        <h1 class="display-5 fw-bold">Custom Painted Rocks by [Artist’s Name] in Huntersville, NC.</h1>
+        <h1 class="display-5 fw-bold">Custom Painted Rocks by Dyane in Huntersville, NC.</h1>
         <p class="lead mb-4">Vibrant, weather-resistant designs for <strong>birthdays</strong>, <strong>house numbers</strong>, <strong>yard art</strong>, and <strong>memorials</strong>.</p>
         <div class="d-flex gap-2 justify-content-center justify-content-lg-start">
           <a class="btn btn-primary btn-lg rounded-pill" href="{{ '/book/' | relative_url }}"><i class="bi bi-calendar2-check me-1"></i> Book Now</a>

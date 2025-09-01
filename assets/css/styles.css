@@ -26,9 +26,7 @@ h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, -apple-syste
 .gallery-card-img { width: 100%; height: auto; display:block; }
 
 /* Masonry layout for gallery */
-.masonry { column-count: 1; column-gap: 12px; }
-@media (min-width: 576px) { .masonry { column-count: 2; } }
-@media (min-width: 992px) { .masonry { column-count: 3; } }
+.masonry { column-count: 3; column-gap: 12px; }
 .masonry-item { break-inside: avoid; margin-bottom: 12px; }
 
 /* Flip cards for gallery */
