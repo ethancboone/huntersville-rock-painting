@@ -22,12 +22,14 @@ h1, h2, h3, .navbar-brand { font-family: Poppins, Inter, system-ui, -apple-syste
 .hero::before,
 .hero::after { content: none; }
 
-/* Card images in grids: show full image without cropping */
-.gallery-card-img { width: 100%; height: auto; object-fit: contain; background: var(--surface); display:block; }
+/* Card images in grids: natural aspect, no letterbox */
+.gallery-card-img { width: 100%; height: auto; display:block; }
 
-/* Uniform aspect for gallery tiles without cropping */
-.ratio-rect { aspect-ratio: 4 / 3; width: 100%; background: var(--surface); display:flex; align-items:center; justify-content:center; }
-.ratio-rect > img { max-width: 100%; max-height: 100%; height: auto; width: auto; }
+/* Masonry layout for gallery */
+.masonry { column-count: 1; column-gap: 12px; }
+@media (min-width: 576px) { .masonry { column-count: 2; } }
+@media (min-width: 992px) { .masonry { column-count: 3; } }
+.masonry-item { break-inside: avoid; margin-bottom: 12px; }
 
 /* Flip cards for gallery */
 .flip-card { perspective: 1000px; border-radius: 12px; }

@@ -32,21 +32,27 @@ image: /assets/og.jpg
   </section>
 
 ## How It Works
-<div class="stepper" data-reveal>
-  <div class="step">
-    <div class="step-icon"><i class="bi bi-geo-alt-fill"></i></div>
-    <div class="step-title">Reserve the Rock</div>
-    <div class="step-desc">Confirm your date with your school or HOA.</div>
+<div class="row g-4 text-center" data-reveal>
+  <div class="col-md-4" data-reveal>
+    <div class="p-4 h-100 bg-white rounded-3 border">
+      <div class="fs-1 mb-2 text-primary"><i class="bi bi-geo-alt-fill"></i></div>
+      <h3 class="h5">Reserve the Rock</h3>
+      <p class="mb-0">Secure your rock with your school or HOA.</p>
+    </div>
   </div>
-  <div class="step">
-    <div class="step-icon"><i class="bi bi-chat-dots-fill"></i></div>
-    <div class="step-title">Share Your Idea</div>
-    <div class="step-desc">Theme, name, and any must‑have colors.</div>
+  <div class="col-md-4" data-reveal>
+    <div class="p-4 h-100 bg-white rounded-3 border">
+      <div class="fs-1 mb-2 text-primary"><i class="bi bi-chat-dots-fill"></i></div>
+      <h3 class="h5">Share Your Idea</h3>
+      <p class="mb-0">Theme, name, and date. We send a quick mockup.</p>
+    </div>
   </div>
-  <div class="step">
-    <div class="step-icon"><i class="bi bi-brush-fill"></i></div>
-    <div class="step-title">We Paint</div>
-    <div class="step-desc">Durable, weather‑resistant finish — on time.</div>
+  <div class="col-md-4" data-reveal>
+    <div class="p-4 h-100 bg-white rounded-3 border">
+      <div class="fs-1 mb-2 text-primary"><i class="bi bi-brush-fill"></i></div>
+      <h3 class="h5">We Paint</h3>
+      <p class="mb-0">On time, on brand — you enjoy the smiles!</p>
+    </div>
   </div>
 </div>
 
