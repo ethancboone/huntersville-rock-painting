@@ -1,12 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Navbar shadow on scroll
+  // Navbar shadow + show on scroll up (sticky)
   const nav = document.getElementById('mainNav');
   if (nav) {
+    let lastY = window.scrollY;
     const onScroll = () => {
-      if (window.scrollY > 4) nav.classList.add('shadow-sm'); else nav.classList.remove('shadow-sm');
+      const y = window.scrollY;
+      if (y > 4) nav.classList.add('shadow-sm'); else nav.classList.remove('shadow-sm');
+      const goingDown = y > lastY + 2;
+      const goingUp = y < lastY - 2;
+      if (goingDown && y > 80) nav.classList.add('nav-hidden');
+      else if (goingUp) nav.classList.remove('nav-hidden');
+      lastY = y;
     };
     onScroll();
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   // Gallery multi-group filtering (location, style, theme)
