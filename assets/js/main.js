@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Service area map (Leaflet)
+  // Service area map (Leaflet) with intersection polygon
   const mapEl = document.getElementById('service-map');
   if (mapEl && window.L) {
     const map = L.map(mapEl, { scrollWheelZoom: false }).setView([35.4107, -80.8428], 10); // Huntersville approx
@@ -116,13 +116,29 @@ document.addEventListener('DOMContentLoaded', () => {
       attribution: '&copy; OpenStreetMap contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
     }).addTo(map);
     const spots = [
-      { name: 'Huntersville', coords: [35.4107, -80.8428] },
-      { name: 'Charlotte', coords: [35.2271, -80.8431] },
-      { name: 'Cornelius', coords: [35.4868, -80.8601] },
-      { name: 'Davidson', coords: [35.4993, -80.8487] },
+      { name: 'Huntersville', coords: [-80.8428, 35.4107] },
+      { name: 'Charlotte',   coords: [-80.8431, 35.2271] },
+      { name: 'Cornelius',   coords: [-80.8601, 35.4868] },
+      { name: 'Davidson',    coords: [-80.8487, 35.4993] },
     ];
-    spots.forEach(s => L.marker(s.coords).addTo(map).bindPopup(s.name));
-    const group = L.featureGroup(spots.map(s => L.marker(s.coords)));
-    map.fitBounds(group.getBounds(), { padding: [20, 20] });
+
+    // Build 20-mile radius circles around each point and compute their intersection
+    // Note: interpreting "20 degree radius" as 20 miles. Adjust easily.
+    let intersection = null;
+    if (window.turf) {
+      const circles = spots.map(s => turf.circle(s.coords, 20, { steps: 128, units: 'miles' }));
+      intersection = circles.reduce((acc, curr) => acc ? turf.intersect(acc, curr) : curr, null);
+    }
+
+    if (intersection) {
+      const layer = L.geoJSON(intersection, {
+        style: { color: '#39A0ED', weight: 2, fillColor: '#39A0ED', fillOpacity: 0.15 }
+      }).addTo(map);
+      map.fitBounds(layer.getBounds(), { padding: [20, 20] });
+    } else {
+      // Fallback: if intersection fails, show the union-ish extent
+      const bounds = L.latLngBounds(spots.map(s => [s.coords[1], s.coords[0]]));
+      map.fitBounds(bounds.pad(0.25));
+    }
   }
 });
